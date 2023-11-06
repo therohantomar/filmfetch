@@ -15,7 +15,7 @@ const Movies = () => {
   return (
     <main className="w-full h-full">
       <h1 className="text-2xl font-mono font-bold">Trending</h1>
-      <div className="flex flex-wrap w-full h-60 overflow-y-hidden">
+      <div className="flex flex-wrap  border-2  h-60 w-full overflow-y-hidden">
         {trendingAll.map((data: Movie) => {
           return <Carousel key={data.id} {...data} />;
         })}
