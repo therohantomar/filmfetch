@@ -10,7 +10,6 @@ const filmSearchSlice=createSlice({
             state.text=actions.payload
         }
     }
-
 })
 
 

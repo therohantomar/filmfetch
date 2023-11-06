@@ -13,7 +13,7 @@ const Movies = () => {
   }
 
   return (
-    <main className="w-full h-full">
+    <main className="w-full bg-slate-950 text-white h-full">
       <h1 className="text-2xl font-mono font-bold">Trending</h1>
       <div className="flex flex-wrap  border-2  h-60 w-full overflow-y-hidden">
         {trendingAll.map((data: Movie) => {
