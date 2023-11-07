@@ -14,25 +14,14 @@ const Movies = () => {
   }
 
   return (
-    <main className=" bg-slate-950 min-h-screen flex flex-col gap-10  text-white">
+    <main className=" bg-slate-950 min-h-screen w-full  flex flex-col gap-10  text-white">
       <CarouselBox trendingAll={trendingAll} />
-      <>
-        <h1 className="font-bold uppercase animate-pulse text-gray-400">Popular</h1>
+        <h1 className="font-bold uppercase animate-pulse text-gray-100">Popular</h1>
         <Movielist Movies={popular} />
-
-      </>
-      <>
-        <h1 className="font-bold uppercase animate-pulse text-gray-400">Top Rated</h1>
-        <div className="flex flex-wrap relative my-4 w-full justify-center h-60 overflow-y-hidden">
+        <h1 className="font-bold uppercase animate-pulse text-gray-100">Top Rated</h1>
         <Movielist Movies={topRated} />
-        </div>
-      </>
-      <span>
-        <h1 className="font-bold uppercase animate-pulse text-gray-400">UpComings...</h1>
-        <div className="flex flex-wrap relative justify-center my-4 w-full h-60 overflow-y-hidden">
+        <h1 className="font-bold uppercase animate-pulse text-gray-100">UpComings...</h1>
         <Movielist Movies={upcoming} />
-        </div>
-      </span>
     </main>
   );
 };
