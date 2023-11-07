@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react"
-import { useSearchParams } from "react-router-dom"
+import {  useSelector } from "react-redux";
 import { SEARCH_LINK } from "../helper";
 import { Movie } from "../Interfaces";
+import { RootState } from "../store";
 
 const useSearchFilm = () => {
-    const [searchParams] = useSearchParams();
+    const text=useSelector((store:RootState)=>store.filmSearch.text)
     const [error,setError]=useState(false)
     const [searchedFilm,setSearchedFilm]=useState<Movie[]>([])
-    const text=searchParams.get("text")
 
 
     useEffect(()=>{
+        const timeoutid=setTimeout(() => {
         FETCH_SEARCH()
+        }, 250);
         async function FETCH_SEARCH(){
             try{
                 const response=await fetch(SEARCH_LINK+text,{
@@ -29,6 +31,9 @@ const useSearchFilm = () => {
             }
         }
 
+        return ()=>{
+            clearTimeout(timeoutid)
+        }
     },[text])
 
     return {error, searchedFilm}
