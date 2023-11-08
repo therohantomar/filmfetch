@@ -7,8 +7,10 @@ export interface Movie {
     media_type: string;
     name: string;
     origin_country: string[];
+    original_title:string;
     original_language: string;
     original_name: string;
+    release_date:string;
     overview: string;
     popularity: number;
     poster_path: string;

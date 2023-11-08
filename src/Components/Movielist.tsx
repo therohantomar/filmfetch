@@ -36,6 +36,7 @@ const MovieList = (props: { Movies: Movie[] }) => {
                   alt={data.name}
                   className="w-full    rounded-sm h-60"
                 />
+                <h1 className="hidden hover:block">hello</h1>
               </div>
             );
           })}
