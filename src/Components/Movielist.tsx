@@ -1,3 +1,4 @@
+
 import { Movie } from "../utils/Interfaces";
 import { IMGURL } from "../utils/helper";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
@@ -6,6 +7,7 @@ import { useRef } from "react";
 const MovieList = (props: { Movies: Movie[] }) => {
   const { Movies } = props;
   const boxRef = useRef<HTMLDivElement>(null);
+  
 
   function prev() {
     const box = boxRef.current;
@@ -21,22 +23,28 @@ const MovieList = (props: { Movies: Movie[] }) => {
     }
   }
 
+  
   return (
-    <div className="relative w-full h-60">
-      <div className="absolute  h-full flex items-center bg-gray-800 opacity-80 top-0 right-0">
+    <div className="relative  w-full h-60">
+      <div className="absolute   h-full flex items-center bg-gray-800 opacity-80 top-0 right-0">
         <BiChevronRight onClick={next} className="text-2xl cursor-pointer" />
       </div>
-      <span ref={boxRef} className="grid    overflow-x-hidden  ">
-        <div className="flex w-max overflow-x-hidden">
+      <span ref={boxRef} className="grid    overflow-x-hidden   ">
+        <div className="flex w-max overflow-y-hidden   overflow-x-hidden">
           {Movies.map((data: Movie) => {
             return (
-              <div key={data?.id}  className="mx-2 shadow-2xl cursor-pointer p-2 transition-all hover:p-0 w-60 h-60 ">
+              <div key={data?.id}    className="mx-2 relative group  cursor-pointer  hover:scale-105   transition-all  w-60 h-60 ">
                 <img
                   src={IMGURL + data.poster_path}
                   alt={data.name}
-                  className="w-full    rounded-sm h-60"
+                  className="w-full rounded-sm h-60"
                 />
-                <h1 className="hidden hover:block">hello</h1>
+              <div className="absolute -bottom-30  transition-all delay-1000 left-0 opacity-90  right-0 group-hover:bottom-0 bg-slate-700  w-full h-24">
+                {/* <h1 className="text-slate-100 font-bold text-sm font-mono">{data.original_title}</h1> */}
+                <h1 className="text-slate-100 font-bold text-sm font-mono">Release Date: {data.release_date}</h1>
+                <h1 className="text-slate-100 font-bold text-sm font-mono">{data.origin_country}</h1>
+                <p className="text-xs my-2 font-semibold text-gray-300 ">{data.overview}</p>
+              </div>
               </div>
             );
           })}
