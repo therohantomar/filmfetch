@@ -26,9 +26,7 @@ const MovieList = (props: { Movies: Movie[] }) => {
   
   return (
     <div className="relative  w-full h-60">
-      <div className="absolute   h-full flex items-center bg-gray-800 opacity-80 top-0 right-0">
-        <BiChevronRight onClick={next} className="text-2xl cursor-pointer" />
-      </div>
+      
       <span ref={boxRef} className="grid    overflow-x-hidden   ">
         <div className="flex w-max overflow-y-hidden   overflow-x-hidden">
           {Movies.map((data: Movie) => {
@@ -43,15 +41,20 @@ const MovieList = (props: { Movies: Movie[] }) => {
                 {/* <h1 className="text-slate-100 font-bold text-sm font-mono">{data.original_title}</h1> */}
                 <h1 className="text-slate-100 font-bold text-sm font-mono">Release Date: {data.release_date}</h1>
                 <h1 className="text-slate-100 font-bold text-sm font-mono">{data.origin_country}</h1>
-                <p className="text-xs my-2 font-semibold text-gray-300 ">{data.overview}</p>
+                <p className="text-xs my-2 font-semibold ">{data.overview}</p>
               </div>
               </div>
             );
           })}
         </div>
       </span>
-      <div className="absolute  h-full flex items-center z-10 bg-gray-800 opacity-80 top-0 left-0">
+      <div className="absolute  h-full flex items-center z-10 bg-gray-800 opacity-80 top-0 right-0">
+      <BiChevronRight onClick={next} className="text-2xl cursor-pointer" />
+
+      </div>
+      <div className="absolute   h-full flex items-center  bg-gray-800 opacity-80 top-0 left-0">
         <BiChevronLeft onClick={prev} className="text-2xl cursor-pointer" />
+
       </div>
     </div>
   );
