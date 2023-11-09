@@ -1,3 +1,4 @@
+import Footer from "./Footer"
 import Navbar from "./Navbar"
 import {Outlet} from "react-router-dom"
 
@@ -7,6 +8,7 @@ const Container = () => {
     <div className="w-full bg-slate-950 min-h-screen ">
     <Navbar/>
     <Outlet/>
+    <Footer/>
     </div>
   )
 }

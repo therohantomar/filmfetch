@@ -8,13 +8,14 @@ import {AiFillStar} from "react-icons/ai"
 const SearchedContent = () => {
   const { error, searchedFilm } = useSearchFilm();
   const text = useSelector((store: RootState) => store.filmSearch.text);
- console.log(searchedFilm)
+
+  // early returns
   if (error) {
     return <h1>its error</h1>;
   }
 
   return (
-    <div>
+    <div className="min-h-screen">
       <span className="flex gap-4 items-center  ">
         <h1 className="font-bold text-xl text-white">{text===""?"Type in something to get the results":"Your Search For"} </h1>
         <p className="font-bold uppercase text-2xl text-gray-400">{text}</p>
@@ -29,7 +30,6 @@ const SearchedContent = () => {
               alt={data?.name}
             />
              <span className="mx-2 overflow-hidden">
-                        
                     <h1 className="px-2  mr-2 items-center gap-2 bg-gray-500 rounded-sm w-max my-2">Release Date: {data.release_date.toLocaleUpperCase()}</h1>
                     <h1 className="px-2 inline-flex mr-2 items-center gap-2 bg-gray-500 rounded-sm w-max my-2">Language: {data.original_language.toLocaleUpperCase()}</h1>
                     <p className="px-2 inline-flex items-center gap-2 bg-gray-500 rounded-sm w-max">Ratings: {Math.floor(data?.vote_average)}<AiFillStar/></p>

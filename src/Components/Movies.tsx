@@ -2,6 +2,8 @@
 import useAllTrendings from "../utils/hooks/useAllTrendings";
 import CarouselBox from "./CarouselBox";
 import Movielist from "./Movielist";
+import CarouselShimmer from "./CarouselShimmer";
+import MovielistShimmer from "./MovielistShimmer";
 
 const Movies = () => {
   const { trendingAll, popular, topRated, upcoming, loading, error } =
@@ -10,7 +12,7 @@ const Movies = () => {
     return <h1>error occured</h1>;
   }
   if (loading) {
-    return <h1>loading.....</h1>;
+    return (<><CarouselShimmer/><MovielistShimmer/><MovielistShimmer/><MovielistShimmer/></>);
   }
 
   return (
