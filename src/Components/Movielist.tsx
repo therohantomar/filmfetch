@@ -27,7 +27,7 @@ const MovieList = (props: { Movies: Movie[] }) => {
   return (
     <div className="relative  w-full h-60">
       
-      <span ref={boxRef} className="grid    overflow-x-hidden   ">
+      <span ref={boxRef}  className="grid scroll-smooth   overflow-x-hidden   ">
         <div className="flex w-max overflow-y-hidden   overflow-x-hidden">
           {Movies.map((data: Movie) => {
             return (
