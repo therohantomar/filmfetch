@@ -27,8 +27,8 @@ const MovieList = (props: { Movies: Movie[] }) => {
   return (
     <div className="relative  w-full h-60">
       
-      <span ref={boxRef}  className="grid scroll-smooth   overflow-x-hidden   ">
-        <div className="flex w-max overflow-y-hidden   overflow-x-hidden">
+      <span ref={boxRef}  className="grid scroll-smooth  overflow-x-hidden">
+        <div className="flex w-max overflow-y-hidden items-center   overflow-x-hidden">
           {Movies.map((data: Movie) => {
             return (
               <div key={data?.id}    className="mx-2 relative group  cursor-pointer  hover:scale-105   transition-all  w-60 h-60 ">
@@ -48,11 +48,11 @@ const MovieList = (props: { Movies: Movie[] }) => {
           })}
         </div>
       </span>
-      <div className="absolute  h-full flex items-center z-10 bg-gray-800 opacity-80 top-0 right-0">
+      <div className="absolute  h-full flex items-center z-10 bg-red-900 opacity-95 top-0 right-0">
       <BiChevronRight onClick={next} className="text-2xl cursor-pointer" />
 
       </div>
-      <div className="absolute   h-full flex items-center  bg-gray-800 opacity-80 top-0 left-0">
+      <div className="absolute   h-full flex items-center  bg-red-900 opacity-95 top-0 left-0">
         <BiChevronLeft onClick={prev} className="text-2xl cursor-pointer" />
 
       </div>

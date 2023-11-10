@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import filmSearchSlice from "./filmSearchSlice";
+import AuthenticationSlice from "./authenticationSlice";
 
 const store=configureStore({
     reducer:{
-        filmSearch:filmSearchSlice
+        filmSearch:filmSearchSlice,
+        authentication:AuthenticationSlice
 
     }
 })

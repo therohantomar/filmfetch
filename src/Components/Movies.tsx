@@ -18,11 +18,11 @@ const Movies = () => {
   return (
     <main className=" bg-slate-950 min-h-screen w-full  flex flex-col gap-10  text-white">
       <CarouselBox trendingAll={trendingAll} />
-        <h1 className="font-bold uppercase animate-pulse text-gray-100">Popular</h1>
+        <h1 className="font-bold uppercase text-xl text-red-700">Popular</h1>
         <Movielist Movies={popular} />
-        <h1 className="font-bold uppercase animate-pulse text-gray-100">Top Rated</h1>
+        <h1 className="font-bold uppercase text-xl text-red-700">Top Rated</h1>
         <Movielist Movies={topRated} />
-        <h1 className="font-bold uppercase animate-pulse text-gray-100">UpComings...</h1>
+        <h1 className="font-bold uppercase text-xl text-red-700">UpComings...</h1>
         <Movielist Movies={upcoming} />
     </main>
   );

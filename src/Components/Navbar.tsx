@@ -3,6 +3,7 @@ import { AppDispatch, RootState } from "../utils/store"
 import { addText } from "../utils/filmSearchSlice"
 import {Link} from "react-router-dom"
 import { FaUserCircle } from "react-icons/fa"
+import { toggleAuthentication } from "../utils/authenticationSlice"
 const Navbar = () => {
   const dispatch=useDispatch<AppDispatch>()
   const text=useSelector((store:RootState)=>store.filmSearch.text)
@@ -14,7 +15,7 @@ const Navbar = () => {
         <h1 className="cursor-pointer ">Series</h1>
       </span>
       <Link  className="w-1/2" to={`search?text=${text}`}><input type="text" className="text-slate-950 px-2 font-bold  w-full  rounded-sm" value={text} onChange={(e)=>{dispatch(addText(e.target.value))}} placeholder="search..." /></Link>
-      <FaUserCircle className="text-2xl"/>
+      <FaUserCircle onClick={()=>dispatch(toggleAuthentication())} className="text-2xl cursor-pointer"/>
     </nav>
   )
 }
