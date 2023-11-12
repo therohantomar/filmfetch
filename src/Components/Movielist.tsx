@@ -48,7 +48,7 @@ const MovieList = (props: { Movies: Movie[] }) => {
           })}
         </div>
       </span>
-      <div className="absolute  h-full flex items-center z-10 bg-red-900 opacity-95 top-0 right-0">
+      <div className="absolute  h-full flex items-center  bg-red-900 opacity-95 top-0 right-0">
       <BiChevronRight onClick={next} className="text-2xl cursor-pointer" />
 
       </div>

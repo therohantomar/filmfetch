@@ -11,11 +11,12 @@ const SearchedContent = () => {
 
   // early returns
   if (error) {
-    return <h1>its error</h1>;
+    return <h1 >its error</h1>;
   }
 
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <span className="flex gap-4 items-center  ">
         <h1 className="font-bold text-xl text-white">{text===""?"Type in something to get the results":"Your Search For"} </h1>
         <p className="font-bold uppercase text-2xl text-gray-400">{text}</p>
@@ -42,6 +43,7 @@ const SearchedContent = () => {
         );
       })}
     </div>
+  
   );
 };
 
