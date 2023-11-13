@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import filmSearchSlice from "./filmSearchSlice";
 import AuthenticationSlice from "./authenticationSlice";
+import resetSlice from "./resetSlice";
+import logoutSlice from "./logoutSlice";
 
 const store=configureStore({
     reducer:{
         filmSearch:filmSearchSlice,
-        authentication:AuthenticationSlice
+        authentication:AuthenticationSlice,
+        reset:resetSlice,
+        logout:logoutSlice
 
     }
 })

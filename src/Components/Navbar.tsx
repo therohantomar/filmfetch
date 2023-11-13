@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../utils/store";
 import { addText } from "../utils/filmSearchSlice";
@@ -8,23 +8,26 @@ import { toggleAuthentication } from "../utils/authenticationSlice";
 import { auth } from "../utils/firebaseAuth";
 import { BiSolidLogOutCircle } from "react-icons/bi";
 import { signOut } from "firebase/auth";
+import toast, {Toaster} from "react-hot-toast"
+import { toggleLogout } from "../utils/logoutSlice";
 
 const Navbar = () => {
-  const [showLogIn, setShowLogIn] = useState(true);
   const dispatch = useDispatch<AppDispatch>();
   const text = useSelector((store: RootState) => store.filmSearch.text);
+  const isLogoutOpen=useSelector((store:RootState)=>store.logout.isLogoutOpen)
 
   function SignOut() {
     signOut(auth)
       .then(() => {
-      alert("sucessfully Logged out")
-        setShowLogIn((prev) => !prev);
+      toast.success("sucessfully Logged out")
+      dispatch(toggleLogout())
       })
       .catch((err) => console.log(err));
   }
 
   return (
     <nav className="bg-slate-950 sticky top-0 left-0 right-0 z-10 flex justify-center p-4 gap-10 text-slate-400">
+      <Toaster position="top-center"/>
       <span className="flex w-max gap-10">
         <Link to="/">
           <h1 className="cursor-pointer ">Movies</h1>
@@ -43,19 +46,18 @@ const Navbar = () => {
         />
       </Link>
       <span className="flex flex-col">
-        {showLogIn ? (
-          <FaUserCircle
-            onClick={() => {
-              dispatch(toggleAuthentication());
-              setShowLogIn((prev) => !prev);
-            }}
-            className="text-2xl cursor-pointer"
-          />
+        {isLogoutOpen ? (
+           <BiSolidLogOutCircle
+           onClick={() => SignOut()}
+           className="text-2xl hover:text-red-700  cursor-pointer"
+         />
         ) : (
-          <BiSolidLogOutCircle
-            onClick={() => SignOut()}
-            className="text-2xl hover:text-red-700  cursor-pointer"
-          />
+          <FaUserCircle
+          onClick={() => {
+            dispatch(toggleAuthentication());
+          }}
+          className="text-2xl cursor-pointer"
+        />
         )}
         <h1 className="text-xs">{auth?.currentUser?.email?.slice(0, 6)}</h1>
       </span>
