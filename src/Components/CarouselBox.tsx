@@ -20,8 +20,8 @@ const CarouselBox = (props: { trendingAll: Movie[]; }) => {
     return (
         <div>
             <div id="Carousel_Box" className="flex flex-col items-center bg-movieAlbum w-full justify-center relative transition-all  ">
-                <section key={trendingAll[index]?.id} id="Carousel_Block" className="w-full flex p-4  gap-4 h-full justify-center bg-slate-800 opacity-95">
-                    <img src={IMGURL + trendingAll[index]?.poster_path} alt={trendingAll[index]?.name} className="shadow-xl w-[20em] h-[20em]   rounded-md cursor-pointer " />
+                <section key={trendingAll[index]?.id} id="Carousel_Block" className="w-full flex p-4  gap-4 h-full justify-center flex-wrap bg-slate-800 opacity-95">
+                    <img src={IMGURL + trendingAll[index]?.poster_path} alt={trendingAll[index]?.name} className="shadow-xl  w-[20em] h-[20em]   rounded-md cursor-pointer " />
                     <div className="flex flex-col">
                         <h1>{trendingAll[index]?.release_date}</h1>
                         <h1 className="font-bold">Language: {trendingAll[index]?.original_language.toLocaleUpperCase()}</h1>

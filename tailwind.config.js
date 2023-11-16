@@ -10,7 +10,10 @@ export default {
       backgroundImage:{
         "movieAlbum":'url("./src/assets/postermovieimg.jpg")',
         "movieSearchAlbum":'url("./src/assets/postermoviesearchimg.jpg")'
-      }
+      },
+    screens:{
+      xs:"400px"
+    }
     },
   },
   plugins: [],

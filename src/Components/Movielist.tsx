@@ -8,7 +8,7 @@ const MovieList = (props: { Movies: Movie[] }) => {
   const { Movies } = props;
   const boxRef = useRef<HTMLDivElement>(null);
   
-
+   console.log(Movies)
   function prev() {
     const box = boxRef.current;
     if (box) {
