@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react";
 import { Movie } from "../utils/Interfaces";
 import useSearchFilm from "../utils/hooks/useSearchFilm";
 import { IMGURL } from "../utils/helper";
@@ -10,12 +10,11 @@ import { useNavigate } from "react-router-dom";
 import { useScrollable } from "../utils/hooks/useScrollable";
 
 const SearchedContent = () => {
-  const [loading, setloading]=useState<boolean>(false)
+  const [loading, setloading] = useState<boolean>(false);
   const page = useScrollable(setloading);
-  const { error, searchedFilm } = useSearchFilm(page,setloading);
+  const { error, searchedFilm } = useSearchFilm(page, setloading);
   const text = useSelector((store: RootState) => store.filmSearch.text);
   const Navigate = useNavigate();
-
 
   // early returns
   if (error) {
@@ -74,7 +73,15 @@ const SearchedContent = () => {
           </div>
         );
       })}
-      {loading && Array(1).fill(0).map((index)=><span key={index}> <div className="w-full h-60 animate-pulse my-2 bg-slate-800"></div></span>)}
+      {loading &&
+        Array(1)
+          .fill(0)
+          .map((index) => (
+            <span key={index}>
+              {" "}
+              <div className="w-full h-60 animate-pulse my-2 bg-slate-800"></div>
+            </span>
+          ))}
     </div>
   );
 };

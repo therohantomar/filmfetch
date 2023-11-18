@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import useTrailer from "../utils/hooks/useTrailer";
-import { TrailerInter } from "../utils/Interfaces";
 
 const WatchPage = () => {
   const { id } = useParams();
