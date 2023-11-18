@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       backgroundImage:{
-        "movieAlbum":'url("./src/assets/postermovieimg.jpg")',
-        "movieSearchAlbum":'url("./src/assets/postermoviesearchimg.jpg")'
+        "movieAlbum":'url("./public/postermovieimg.jpg")',
+        "movieSearchAlbum":'url("./public/postermoviesearchimg.jpg")'
       },
     screens:{
       xs:"300px"

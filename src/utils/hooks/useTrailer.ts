@@ -2,7 +2,7 @@ import {useEffect, useState} from "react"
 import { TrailerInter } from "../Interfaces";
 
 export default function useTrailer(id:string | undefined){
-  const [Trailer, setTrailer] = useState<TrailerInter>({id:"",name:"",key:""});
+  const [Trailer, setTrailer] = useState<TrailerInter | null>();
 
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export default function useTrailer(id:string | undefined){
             }`
           );
           const data:{results:TrailerInter[]} = await response.json();
-          setTrailer(data.results[3]);
+          setTrailer(data.results[0]);
         }
         fetchTrailer();
       }, [id]);

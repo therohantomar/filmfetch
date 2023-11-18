@@ -6,7 +6,7 @@ import { TrailerInter } from "../utils/Interfaces";
 const WatchPage = () => {
   const { id } = useParams();
   const  {Trailer}  = useTrailer(id) as {Trailer:TrailerInter}
-
+console.log(Trailer)
   if(Trailer){
   return ( <div className="realtive text-white w-full ">
       <iframe
