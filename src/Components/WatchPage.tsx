@@ -8,7 +8,7 @@ const WatchPage = () => {
   const  {Trailer}  = useTrailer(id) as {Trailer:TrailerInter}
 
   if(Trailer){
-  return ( <div className="realtive ,in-h-screen text-white w-full ">
+  return ( <div className="realtive min-h-screen text-white w-full ">
       <iframe
         className="w-full relative  h-screen"
         src={`https://www.youtube.com/embed/${Trailer?.key}?autoplay=1&controls=0&showinfo=0&rel=0`}
