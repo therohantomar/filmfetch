@@ -8,7 +8,7 @@ export default function useTrailer(id:string | undefined){
     useEffect(() => {
         async function fetchTrailer() {
           const response = await fetch(
-            `http://api.themoviedb.org/3/movie/${id}/videos?api_key=${
+            `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${
               import.meta.env.VITE_APP_API_KEY
             }`
           );
