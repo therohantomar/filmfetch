@@ -2,7 +2,7 @@ import {useEffect, useState} from "react"
 import { TrailerInter } from "../Interfaces";
 
 export default function useTrailer(id:string | undefined){
-  const [Trailer, setTrailer] = useState<unknown | TrailerInter>({});
+  const [Trailer, setTrailer] = useState<TrailerInter>({id:"",name:"",key:""});
 
 
     useEffect(() => {

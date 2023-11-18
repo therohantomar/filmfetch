@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
 import useTrailer from "../utils/hooks/useTrailer";
+import { TrailerInter } from "../utils/Interfaces";
+
 
 const WatchPage = () => {
   const { id } = useParams();
-  const { Trailer } = useTrailer(id);
+  const  {Trailer}  = useTrailer(id) as {Trailer:TrailerInter}
 
-
-  return (
-
-    <div className="realtive text-white w-full ">
+  if(Trailer){
+  return ( <div className="realtive text-white w-full ">
       <iframe
         className="w-full relative  h-screen"
         src={`https://www.youtube.com/embed/${Trailer?.key}?autoplay=1&controls=0&showinfo=0&rel=0`}
@@ -20,6 +20,10 @@ const WatchPage = () => {
       <span className="absolute top-96  bg-gray-400 opacity-50  left-0  text-4xl text-black"></span>
     </div>
   );
+
+}
 };
+
+
 
 export default WatchPage;
