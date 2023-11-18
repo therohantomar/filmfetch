@@ -36,3 +36,12 @@ export interface Movie {
     loading:boolean,
     error:boolean
   }
+
+
+  export interface TrailerInter{
+    id:string,
+    name:string,
+    key:string,
+
+
+  }

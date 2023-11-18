@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import store from "./utils/store"
 import Container from "./Components/Container"
 import SearchedContent from "./Components/SearchedContent"
+import WatchPage from "./Components/WatchPage"
 
 const BrowserRouter=createBrowserRouter([
   {
@@ -14,8 +15,11 @@ const BrowserRouter=createBrowserRouter([
       path:"/",
       element:<Movies/>
     },{
-      path:"/search",
+      path:"search",
       element:<SearchedContent/>
+    },{
+      path:"video/:id",
+      element:<WatchPage/>
     }]
   },
   

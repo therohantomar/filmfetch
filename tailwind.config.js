@@ -12,7 +12,7 @@ export default {
         "movieSearchAlbum":'url("./src/assets/postermoviesearchimg.jpg")'
       },
     screens:{
-      xs:"400px"
+      xs:"300px"
     }
     },
   },

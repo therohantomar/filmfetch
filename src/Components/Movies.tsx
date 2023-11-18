@@ -9,7 +9,7 @@ const Movies = () => {
   const { trendingAll, popular, topRated, upcoming, loading, error } =
     useAllTrendings();
   if (error) {
-    return <h1>error occured</h1>;
+    return <div className="min-h-screen text-white"><h1>error occured</h1></div>;
   }
   if (loading) {
     return (<><CarouselShimmer/><MovielistShimmer/><MovielistShimmer/><MovielistShimmer/></>);
