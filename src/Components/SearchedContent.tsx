@@ -22,7 +22,7 @@ const SearchedContent = () => {
   }
 
   return (
-    <div id="scroll" className="min-h-screen ">
+    <div id="scroll" className="h-screen ">
       <span className="flex gap-4 items-center  ">
         <h1 className="font-bold sm:text-lg md:text-lg xs:text-lg lg:text-xl xl:text-xl 2xl:text-xl  text-white">
           {text === ""

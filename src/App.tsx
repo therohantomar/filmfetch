@@ -6,6 +6,7 @@ import store from "./utils/store"
 import Container from "./Components/Container"
 import SearchedContent from "./Components/SearchedContent"
 import WatchPage from "./Components/WatchPage"
+import Series from "./Components/Series"
 
 const BrowserRouter=createBrowserRouter([
   {
@@ -17,6 +18,9 @@ const BrowserRouter=createBrowserRouter([
     },{
       path:"search",
       element:<SearchedContent/>
+    },{
+      path:"series",
+      element:<Series/>
     },{
       path:"video/:id",
       element:<WatchPage/>

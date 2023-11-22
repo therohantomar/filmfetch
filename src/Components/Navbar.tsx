@@ -23,7 +23,7 @@ const Navbar = () => {
         <Link to="/">
           <h1 className="cursor-pointer ">Movies</h1>
         </Link>
-        <h1 className="cursor-pointer ">Series</h1>
+        <Link to="/series"><h1 className="cursor-pointer ">Series</h1></Link>
       </span>
       <Link className="w-1/2" to={`search?text=${text}`}>
         <input
