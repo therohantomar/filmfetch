@@ -11,7 +11,7 @@ const WatchPage = () => {
 
   if (!Trailer) {
     return (
-      <div className="min-h-screen text-white ">
+      <div className="flex flex-col items-center justify-center text-white ">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -164,6 +164,7 @@ const WatchPage = () => {
             fill="#cacaca"
           />
         </svg>
+        <h1>Trailer Not Found</h1>
       </div>
     );
   }
