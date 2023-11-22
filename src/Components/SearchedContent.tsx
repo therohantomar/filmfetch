@@ -23,13 +23,12 @@ const SearchedContent = () => {
 
   if (text === "") {
     return (
-      <span className="flex flex-col gap-4 justify-center  items-center  ">
+      <span className="flex flex-col min-h-screen gap-4 justify-center  items-center  ">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
-          width="722.11262"
-          height="558.1509"
-          viewBox="0 0 722.11262 558.1509"
+          className="w-96 h-96"
+                  viewBox="0 0 722.11262 558.1509"
         >
           <path
             d="M892.0771,705.04148h-585.082a68.4964,68.4964,0,0,1-66.89649-83.21289l26.13379-118.78711H932.83979l26.13379,118.78711a68.49639,68.49639,0,0,1-66.89648,83.21289Zm-624.23731-200-25.78808,117.2168a66.49673,66.49673,0,0,0,64.94336,80.7832h585.082a66.49674,66.49674,0,0,0,64.94336-80.7832l-25.78809-117.2168Z"
@@ -372,10 +371,10 @@ const SearchedContent = () => {
       className="h-max flex flex-col items-center justify-center"
     >
       {searchedFilm.length === 0 ? (
+        <div className="min-h-screen">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="656"
-          height="458.68642"
+          className="w-96 h-96"
           viewBox="0 0 656 458.68642"
         >
           <rect y="434.34322" width="656" height="2" fill="#3f3d56" />
@@ -475,6 +474,7 @@ const SearchedContent = () => {
             </g>
           </g>
         </svg>
+        </div>
       ) : null}
       <h1 className="font-bold text-xl  text-gray-500">
         {text === "" ? "" : searchedFilm.length + " " + "Results found"}{" "}
