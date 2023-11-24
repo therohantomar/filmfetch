@@ -5,7 +5,7 @@ export function useScrollable(setLoading:React.Dispatch<SetStateAction<boolean>>
 
     function scrollTap() {
         if (
-            window.innerHeight + document.documentElement.scrollTop >=
+            window.innerHeight + document.documentElement.scrollTop+1 >=
             document.documentElement.scrollHeight
         ) {
             setLoading(true)

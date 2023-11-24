@@ -7,14 +7,17 @@ import Container from "./Components/Container"
 import SearchedContent from "./Components/SearchedContent"
 import WatchPage from "./Components/WatchPage"
 import Series from "./Components/Series"
+import Error from "./Components/Error"
 
 const BrowserRouter=createBrowserRouter([
   {
     path:"/",
     element:<Container/>,
+    errorElement:<Error/>,
     children:[{
       path:"/",
-      element:<Movies/>
+      element:<Movies/>,
+      errorElement:<Error/>,
     },{
       path:"search",
       element:<SearchedContent/>
@@ -38,9 +41,7 @@ function App() {
   return (
     <>
     <Provider store={store} >
-    <RouterProvider router={BrowserRouter} />
-    
-    
+       <RouterProvider router={BrowserRouter} />
     </Provider>
     </>
   )

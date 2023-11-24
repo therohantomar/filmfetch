@@ -5,6 +5,7 @@ import toast, {Toaster} from "react-hot-toast"
 import { useDispatch } from "react-redux"
 import { AppDispatch } from "../utils/store"
 import { toggleReset } from "../utils/resetSlice"
+import { RxCross2 } from "react-icons/rx";
 
 
 const ResetPassword = () => {
@@ -14,7 +15,6 @@ const ResetPassword = () => {
 
     const resetPassword=(e:React.FormEvent)=>{
         e.preventDefault()
-        
         sendPasswordResetEmail(auth,email).then(()=>{
             toast.success(`Reset Link Sended to ${email}`)
             dispatch(toggleReset())
@@ -25,6 +25,7 @@ const ResetPassword = () => {
 
   return (
     <div className="fixed top-0 bottom-0 left-0 right-0 z-30 bg-slate-950 flex flex-col gap-2 items-center justify-center">
+      <RxCross2 onClick={()=>dispatch(toggleReset())} className="text-red-500 font-bolder text-2xl self-end cursor-pointer   mx-20"/>
       <Toaster/>
       <form onSubmit={(e)=>resetPassword(e)} className="flex  flex-col  gap-4 m-auto items-center my-24 bg-slate-950 shadow-xl text-white w-max px-20 py-14">
         <span className="flex  flex-col">
